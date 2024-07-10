@@ -11,6 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.function.Function;
 
@@ -29,7 +31,7 @@ public class JwtService {
 
     private final TokenRepository tokenRepository;
 
-    public JwtService(TokenRepository tokenRepository) {
+    public JwtService(TokenRepository tokenRepository) throws NoSuchAlgorithmException {
         this.tokenRepository = tokenRepository;
     }
 
@@ -37,6 +39,7 @@ public class JwtService {
         return extractClaim(token, Claims::getSubject);
     }
 
+    public String extractUserRole(String token) {return extractClaim(token, Claims::getIssuer);}
 
     public boolean isValid(String token, UserDetails user) {
         String username = extractUsername(token);
@@ -104,8 +107,11 @@ public class JwtService {
         return token;
     }
 
+    MessageDigest md = MessageDigest.getInstance("SHA3-512");
+
     private SecretKey getSigninKey() {
-        byte[] keyBytes = Decoders.BASE64URL.decode(secretKey);
+        byte[] keyBytes = md.digest(secretKey.getBytes());
+//        byte[] keyBytes = Decoders.BASE64URL.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }

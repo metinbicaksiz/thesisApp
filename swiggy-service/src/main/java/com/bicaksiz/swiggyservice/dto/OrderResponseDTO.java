@@ -1,10 +1,8 @@
 package com.bicaksiz.swiggyservice.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.Date;
 
 @Data

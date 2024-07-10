@@ -1,0 +1,23 @@
+docker tag swiggy-service metinbicaksiz/swiggy-service:0.1.RELEASE
+docker push metinbicaksiz/swiggy-service:0.1.RELEASE
+
+docker tag service-registry metinbicaksiz/service-registry:0.1.RELEASE
+docker push metinbicaksiz/service-registry:0.1.RELEASE
+
+docker tag restaurant-service metinbicaksiz/restaurant-service:0.1.RELEASE
+docker push metinbicaksiz/restaurant-service:0.1.RELEASE
+
+docker tag auth-service-sha2 metinbicaksiz/auth-service-sha2:0.1.RELEASE
+docker push metinbicaksiz/auth-service-sha2:0.1.RELEASE
+
+docker tag auth-service metinbicaksiz/auth-service:0.1.RELEASE
+docker push metinbicaksiz/auth-service:0.1.RELEASE
+
+docker tag api-gateway-sha2 metinbicaksiz/api-gateway-sha2:0.1.RELEASE
+docker push metinbicaksiz/api-gateway-sha2:0.1.RELEASE
+
+docker tag api-gateway metinbicaksiz/api-gateway:0.1.RELEASE
+docker push metinbicaksiz/api-gateway:0.1.RELEASE
+
+docker tag admin-service metinbicaksiz/admin-service:0.1.RELEASE
+docker push metinbicaksiz/admin-service:0.1.RELEASE
