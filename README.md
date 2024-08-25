@@ -170,6 +170,6 @@ Ensure you have the following installed:
 
 ---
 
-Feel free to explore the codebase and contribute to the project by submitting pull requests or raising issues. For any questions or support, please reach out to the repository maintainer.
+Feel free to explore the codebase and contribute to the project by submitting pull requests or raising issues. For any questions or support, please reach out.
 
 Happy coding! 🚀
